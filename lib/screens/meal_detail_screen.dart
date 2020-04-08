@@ -9,7 +9,7 @@ class MealDetailScreen extends StatelessWidget {
     return Container(
       alignment: Alignment.centerLeft,
       margin: EdgeInsets.only(
-        top: 25,
+        top: 30,
         left: 20,
         bottom: 20,
       ),
@@ -27,8 +27,8 @@ class MealDetailScreen extends StatelessWidget {
 
   Widget buildContainer(Widget child, double height) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10),
-      margin: EdgeInsets.only(top: 5, left: 5, right: 5, bottom: 15),
+      // padding: EdgeInsets.symmetric(horizontal: 10),
+      margin: EdgeInsets.only(top: 5),
       height: height,
       decoration: BoxDecoration(
           // border:
@@ -72,7 +72,7 @@ class MealDetailScreen extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      elevation: 3,
+                      // elevation: 3,
                       color: Theme.of(context).accentColor,
                       child: Padding(
                         padding: EdgeInsets.only(
@@ -84,6 +84,7 @@ class MealDetailScreen extends StatelessWidget {
                         child: Text(
                           selectedMeal.ingredients[index],
                           style: TextStyle(
+                            color: Colors.black.withOpacity(0.6),
                             fontSize: 15,
                             fontFamily: 'Raleway',
                             fontWeight: FontWeight.bold,
@@ -102,6 +103,7 @@ class MealDetailScreen extends StatelessWidget {
                 ListView.builder(
                   itemBuilder: (ctx, index) => Column(children: [
                     ListTile(
+                      contentPadding: EdgeInsets.only(left:20, right: 20),
                       leading: CircleAvatar(
                         child: Text('# ${(index + 1)}'),
                       ),
