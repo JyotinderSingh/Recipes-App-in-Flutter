@@ -103,7 +103,7 @@ class MealDetailScreen extends StatelessWidget {
                 ListView.builder(
                   itemBuilder: (ctx, index) => Column(children: [
                     ListTile(
-                      contentPadding: EdgeInsets.only(left:20, right: 20),
+                      contentPadding: EdgeInsets.only(left: 20, right: 20),
                       leading: CircleAvatar(
                         child: Text('# ${(index + 1)}'),
                       ),
@@ -120,6 +120,14 @@ class MealDetailScreen extends StatelessWidget {
                 400)
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+          Icons.delete,
+        ),
+        onPressed: () {
+          Navigator.of(context).pop(mealId);
+        },
       ),
     );
   }
